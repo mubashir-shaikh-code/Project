@@ -5,10 +5,6 @@ const Product = require('../Models/Product');
 
 const JWT_SECRET = 'your_jwt_secret'; // Use environment variable in production
 
-// Generate JWT Token
-// const generateToken = (user) => {
-//   return jwt.sign({user}, JWT_SECRET, { expiresIn: '1d' });
-// };
 const generateToken = (user) => {
   return jwt.sign({ id: user._id }, JWT_SECRET, { expiresIn: '1d' });
 };
@@ -105,11 +101,19 @@ exports.approveProduct = async (req, res) => {
 };
 
 // Get All Approved Products (Public)
+// Get All Approved Products (Public)
 exports.getApprovedProducts = async (req, res) => {
   try {
     const products = await Product.find({ status: 'approved' });
+
+    if (!Array.isArray(products)) {
+      console.log("Expected array, got:", products);
+    }
+
     res.status(200).json(products);
   } catch (err) {
+    console.error('Error fetching approved products:', err);
     res.status(500).json({ message: 'Error fetching approved products' });
   }
 };
+
