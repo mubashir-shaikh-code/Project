@@ -19,6 +19,7 @@ const Login = () => {
 
       if (res.ok) {
         if (data.role === 'admin') {
+          // localStorage.setItem('admin', true); 
           alert('Admin login successful!');
           window.location.href = '/admin';
         } else {
