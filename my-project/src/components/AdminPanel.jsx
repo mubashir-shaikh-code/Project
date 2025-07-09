@@ -3,14 +3,18 @@ import React, { useEffect, useState } from 'react';
 const AdminPanel = () => {
   const [pendingProducts, setPendingProducts] = useState([]);
 
-  useEffect(() => {
-    fetch('https://project-blcv.vercel.app/api/pending-products')
-      .then(res => res.json())
-      .then(setPendingProducts);
+  useEffect(  () => {
+      getAllApprove()
   }, []);
 
+  const getAllApprove= async()=>{
+       await fetch('https://project-blcv.vercel.app/api/admin/pending-products')
+      .then(res => res.json())
+      .then(setPendingProducts);
+  }
+
   const handleApprove = async (id) => {
-    const res = await fetch(`https://project-blcv.vercel.app/api/approve-product/${id}`, {
+    const res = await fetch(`https://project-blcv.vercel.app/api/admin/approve-product/${id}`, {
       method: 'PUT'
     });
     const data = await res.json();
@@ -19,7 +23,7 @@ const AdminPanel = () => {
   };
 
   return (
-    
+
     <div className="min-h-screen bg-gray-900 text-white p-6">
       <h1 className="text-3xl font-bold mb-6">Admin Dashboard</h1>
 
