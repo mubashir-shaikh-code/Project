@@ -8,9 +8,9 @@ const {
   getPendingProducts,
   approveProduct,
   getApprovedProducts
-} = require('../Controllers/Controller');
+} = require('../Controllers/Controller.js');
 
-const { protect } = require('../Middleware'); // ✅ fix the path
+const { protect } = require('../Middleware.js'); // ✅ fix the path
 
 router.post('/login', loginUser);
 router.post('/register', registerUser);

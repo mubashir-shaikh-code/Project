@@ -58,6 +58,7 @@ exports.registerUser = async (req, res) => {
 
 // Get Logged-in User's Products
 exports.getUserProducts = async (req, res) => {
+
   try {
     const products = await Product.find({ userId: req.params.userId });
     res.status(200).json(products);
@@ -112,6 +113,7 @@ exports.getApprovedProducts = async (req, res) => {
 
     res.status(200).json(products);
   } catch (err) {
+
     console.error('Error fetching approved products:', err);
     res.status(500).json({ message: 'Error fetching approved products' });
   }
