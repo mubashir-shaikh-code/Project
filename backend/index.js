@@ -14,7 +14,7 @@ app.use(express.urlencoded({ extended: true, limit: '5mb' }));
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
   
 //MOONGODB CONNECTION
-mongoose.connect('mongodb+srv://MuhammadMubashir:Matz@project.lbrheme.mongodb.net/')
+mongoose.connect('mongodb+srv://MuhammadMubashir:Matz@project.lbrheme.mongodb.net/test')
   .then(() => console.log('✅ MongoDB connected successfully'))
   .catch((err) => console.error('❌ MongoDB connection failed:', err));
 
