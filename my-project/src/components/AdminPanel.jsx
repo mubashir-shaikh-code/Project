@@ -4,13 +4,13 @@ const AdminPanel = () => {
   const [pendingProducts, setPendingProducts] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:5000/admin/pending-products')
+    fetch('https://project-blcv.vercel.app/api/pending-products')
       .then(res => res.json())
       .then(setPendingProducts);
   }, []);
 
   const handleApprove = async (id) => {
-    const res = await fetch(`http://localhost:5000/admin/approve-product/${id}`, {
+    const res = await fetch(`https://project-blcv.vercel.app/api/approve-product/${id}`, {
       method: 'PUT'
     });
     const data = await res.json();

@@ -14,7 +14,7 @@ const Products = () => {
     const userId = decoded.id;
 
 
-    fetch(`http://localhost:5000/my-products/${userId}`, {
+    fetch(`https://project-blcv.vercel.app/api/my-products/${userId}`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },

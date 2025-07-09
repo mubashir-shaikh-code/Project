@@ -15,7 +15,7 @@ const stored = localStorage.getItem('user');
 if (stored && stored !== "undefined") {
   setUser(JSON.parse(stored));
 }
-    fetch('http://localhost:5000/approved-products')
+    fetch('https://project-blcv.vercel.app/api/approved-products')
       .then((res) => res.json())
       .then(setApprovedProducts);
   }, []);
