@@ -20,7 +20,7 @@ mongoose.connect('mongodb+srv://MuhammadMubashir:Matz@project.lbrheme.mongodb.ne
 
 // ✅ Import and use routes
 const authRoutes = require('./Routes/Route');
-app.use('/api/', authRoutes);
+app.use('/api', authRoutes);
 
 app.get('/', (req, res) => {
   res.send('Hello from Vercel Serverless Function!');
