@@ -79,7 +79,7 @@ if (stored && stored !== "undefined") {
           Post and Get Product Approved <br /> Be Happy. Be Productive.
         </h1>
         <p className="mt-20 text-lg font-bold text-white">
-            Bringing quality products to your doorstep with ease. Discover great deals and shop from trusted sellers worldwide
+            Bringing quality products to your  with ease. Discover great deals and shop from trusted sellers worldwide
         </p>
       </section>
 
