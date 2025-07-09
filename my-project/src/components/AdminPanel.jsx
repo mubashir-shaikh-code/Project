@@ -8,13 +8,14 @@ const AdminPanel = () => {
   }, []);
 
   const getAllApprove= async()=>{
-       await fetch('https://project-blcv.vercel.app/api/adminapi/pending-products')
+    
+       await fetch('https://project-blcv.vercel.app/api/pending-products')
       .then(res => res.json())
       .then(setPendingProducts);
   }
 
   const handleApprove = async (id) => {
-    const res = await fetch(`https://project-blcv.vercel.app/api/adminapi/approve-product/${id}`, {
+    const res = await fetch(`https://project-blcv.vercel.app/api/approve-product/${id}`, {
       method: 'PUT'
     });
     const data = await res.json();
