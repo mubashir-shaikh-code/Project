@@ -29,7 +29,7 @@ const Register = () => {
     e.preventDefault();
 
     try {
-      const res = await fetch('https://project-blcv.vercel.app/api/register', {
+      const res = await fetch('https://ecom-backend-production-afea.up.railway.app/api/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

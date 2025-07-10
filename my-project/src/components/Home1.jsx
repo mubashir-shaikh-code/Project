@@ -15,7 +15,7 @@ const stored = localStorage.getItem('user');
 if (stored && stored !== "undefined") {
   setUser(JSON.parse(stored));
 }
-    fetch('https://project-blcv.vercel.app/api/approved-products')
+    fetch('https://ecom-backend-production-afea.up.railway.app/api/approved-products')
       .then((res) => res.json())
       .then(setApprovedProducts);
   }, []);

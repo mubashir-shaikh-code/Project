@@ -14,7 +14,7 @@ const PostProduct = ({ onClose, user }) => {
     const data = { ...formData, userId: user._id };
 
     try {
-      const res = await fetch('https://project-blcv.vercel.app/api/product', {
+      const res = await fetch('https://ecom-backend-production-afea.up.railway.app/api/product', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

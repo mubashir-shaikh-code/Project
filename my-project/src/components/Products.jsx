@@ -14,7 +14,7 @@ const Products = () => {
     const userId = decoded.id;
 
 
-    fetch(`https://project-blcv.vercel.app/api/my-products/${userId}`, {
+    fetch(`https://ecom-backend-production-afea.up.railway.app/api/my-products/${userId}`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
