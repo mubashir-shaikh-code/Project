@@ -12,6 +12,7 @@ const generateToken = (user) => {
 
 // Admin & User Login
 exports.loginUser = async (req, res) => {
+  console.log(req.body,"noo")
   const { email, password } = req.body;
   // Admin login (no DB check)
   if (email === 'admin@ecom.com' && password === 'admin123') {
